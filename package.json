@@ -1,32 +1,53 @@
 {
-  "private": true,
-  "description": "An example project for NextAuth.js with Next.js",
-  "repository": "https://github.com/nextauthjs/next-auth-example.git",
-  "bugs": {
-    "url": "https://github.com/nextauthjs/next-auth/issues"
-  },
-  "homepage": "https://next-auth-example.vercel.app",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
-  },
-  "author": "Iain Collins <me@iaincollins.com>",
-  "contributors": [
-    "Balázs Orbán <info@balazsorban.com>",
-    "Nico Domino <yo@ndo.dev>",
-    "Lluis Agusti <hi@llu.lu>"
-  ],
-  "dependencies": {
-    "next": "latest",
-    "next-auth": "latest",
-    "nodemailer": "^6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^17",
-    "@types/react": "^18.0.15",
-    "typescript": "^4"
-  }
+	"name": "unserializable-getserversession",
+	"version": "0.1.0",
+	"private": true,
+	"engines": {
+		"node": "16.x"
+	},
+	"scripts": {
+		"build": "next build",
+		"db:migrate:dev": "prisma migrate dev",
+		"dev": "conc pnpm:dev:*",
+		"dev:app": "next dev",
+		"dev:services": "docker-compose up",
+		"postinstall": "prisma generate",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@next-auth/prisma-adapter": "1.0.5",
+		"@prisma/client": "4.11.0",
+		"next": "13.2.4",
+		"next-auth": "4.20.1",
+		"nodemailer": "6.9.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"zod": "^3.21.4"
+	},
+	"devDependencies": {
+		"@next/env": "13.2.4",
+		"@types/node": "18.15.5",
+		"@types/react": "18.0.28",
+		"@types/react-dom": "18.0.11",
+		"concurrently": "7.6.0",
+		"dotenv-cli": "7.1.0",
+		"prisma": "4.11.0",
+		"typescript": "4.9.5"
+	},
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSameLine": false,
+		"bracketSpacing": false,
+		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "css",
+		"jsxSingleQuote": false,
+		"printWidth": 100,
+		"proseWrap": "preserve",
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": false,
+		"tabWidth": 1,
+		"trailingComma": "all",
+		"useTabs": true
+	}
 }
